@@ -44,7 +44,6 @@ public class QuizGameFX extends Application {
             return;
         }
 
-        // Preguntas
         preguntas.addAll(Arrays.asList(
                 new String[]{"¿Cuál es la capital de Francia?", "Paris"},
                 new String[]{"¿Cuánto es 5 + 3?", "8"},
@@ -103,7 +102,7 @@ public class QuizGameFX extends Application {
         createLoginScene();
         createGameScene();
 
-        primaryStage.setTitle("🎯 Juego de Trivial");
+        primaryStage.setTitle("Juego de Trivial");
         primaryStage.setScene(loginScene);
         primaryStage.show();
 
@@ -115,13 +114,13 @@ public class QuizGameFX extends Application {
         layout.setPadding(new Insets(30));
         layout.setStyle("-fx-background-color: #1e1e1e;");
 
-        Label label = new Label("🎮 Tu nombre:");
+        Label label = new Label("Tu nombre:");
         label.setStyle("-fx-text-fill: white; -fx-font-size: 18px;");
 
         TextField nameField = new TextField();
         nameField.setStyle("-fx-background-color: #333; -fx-text-fill: white; -fx-font-size: 16px; -fx-border-radius: 5px;");
 
-        Button startButton = new Button("🚀 Empezar");
+        Button startButton = new Button("Empezar");
         startButton.setStyle(buttonStyle());
 
         startButton.setOnAction(e -> {
@@ -144,7 +143,6 @@ public class QuizGameFX extends Application {
         BorderPane layout = new BorderPane();
         layout.setStyle("-fx-background-color: #1e1e1e;");
 
-        // Tabla ranking
         rankingTable = new TableView<>(rankingData);
         rankingTable.setStyle("-fx-background-color: #2e2e2e; -fx-table-cell-border-color: transparent;");
         rankingTable.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
@@ -163,9 +161,9 @@ public class QuizGameFX extends Application {
         rankingBox.setPadding(new Insets(10));
         rankingBox.setStyle("-fx-background-color: #2e2e2e;");
 
-        rankingTable.setMaxHeight(150); // ⬅️ Altura reducida
+        rankingTable.setMaxHeight(150);
 
-        rankingBox.getChildren().addAll(new Label("🏆 Ranking:"), rankingTable);
+        rankingBox.getChildren().addAll(new Label("Ranking:"), rankingTable);
         layout.setTop(rankingBox);
 
 
@@ -219,10 +217,10 @@ public class QuizGameFX extends Application {
             String userAnswer = answerField.getText().trim();
 
             if (userAnswer.equalsIgnoreCase(correctAnswer)) {
-                feedbackLabel.setText("✅ ¡Correcto!");
+                feedbackLabel.setText("¡Correcto!");
                 score++;
             } else {
-                feedbackLabel.setText("❌ Incorrecto. La respuesta correcta es: " + correctAnswer);
+                feedbackLabel.setText("Incorrecto. La respuesta correcta es: " + correctAnswer);
             }
 
             CountDownLatch latch = new CountDownLatch(1);

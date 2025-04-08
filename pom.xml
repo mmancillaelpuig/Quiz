@@ -16,14 +16,12 @@
     </properties>
 
     <dependencies>
-        <!-- Firebase Admin SDK -->
         <dependency>
             <groupId>com.google.firebase</groupId>
             <artifactId>firebase-admin</artifactId>
             <version>9.1.1</version>
         </dependency>
 
-        <!-- JavaFX módulos necesarios -->
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-controls</artifactId>
@@ -38,7 +36,6 @@
 
     <build>
         <plugins>
-            <!-- Plugin para ejecutar aplicaciones JavaFX -->
             <plugin>
                 <groupId>org.openjfx</groupId>
                 <artifactId>javafx-maven-plugin</artifactId>
